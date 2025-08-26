@@ -1,0 +1,6 @@
+{
+  "command": "cd E:\\Python codes\\posterscoop\\frontend npm start",
+  "serverUrl": "http://localhost:3004/",
+  "authenticateProxy": false,
+  "commitMode": "commits"
+}

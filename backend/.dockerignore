@@ -1,0 +1,19 @@
+# backend/.dockerignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite
+*.db
+instance/
+.env
+.env.*
+.mypy_cache/
+.pytest_cache/
+.coverage
+dist/
+build/
+.eggs/
+.migrations_cache/
+.migrated/
+node_modules/

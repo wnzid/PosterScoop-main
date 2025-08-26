@@ -1,0 +1,25 @@
+app = "posterscoop-frontend"
+primary_region = "ams"
+
+[build]
+dockerfile = "Dockerfile"
+[build.args]
+REACT_APP_API_BASE = "https://posterscoop-api.fly.dev"
+
+[[services]]
+internal_port = 8080
+protocol = "tcp"
+
+[[services.ports]]
+port = 80
+handlers = ["http"]
+
+[[services.ports]]
+port = 443
+handlers = ["tls", "http"]
+
+[[services.http_checks]]
+interval = "15s"
+timeout = "2s"
+method = "GET"
+path = "/"

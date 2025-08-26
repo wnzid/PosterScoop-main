@@ -1,0 +1,72 @@
+# ======================
+# Global
+# ======================
+.DS_Store
+Thumbs.db
+.env
+*.log
+*.pyc
+__pycache__/
+*.sqlite3
+.vscode/
+.idea/
+*.bak
+
+# ======================
+# Python (Flask Backend)
+# ======================
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.env
+backend/instance/
+backend/migrations/
+
+# Flask coverage / test reports
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.cache
+nosetests.xml
+pytest_cache/
+pip-log.txt
+
+# ======================
+# React (Frontend)
+# ======================
+frontend/node_modules/
+frontend/.env
+frontend/.env.local
+frontend/.env.development
+frontend/.env.test
+frontend/.env.production
+
+# React build output
+frontend/build/
+frontend/coverage/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.eslintcache
+
+# ======================
+# OS-specific
+# ======================
+# macOS
+**/.DS_Store
+
+# Windows
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+
+
+app.db
+*.png
+*.jpg
+*.jpeg
