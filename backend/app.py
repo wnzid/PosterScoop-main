@@ -71,9 +71,7 @@ CORS(app, resources={
             "https://posterscoop.studio",
             "https://www.posterscoop.studio",
             "http://localhost:3000",
-            "http://localhost:3004",
-
-            "https://posterscoop-frontend.fly.dev"
+            "http://localhost:3004"
         ],
         "supports_credentials": True
     }
@@ -244,8 +242,8 @@ class PromoCode(db.Model):
 # -------------------------------------------------
 # Admin seed
 # -------------------------------------------------
-ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@example.com")
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "adminpass")
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
 
 def init_db():
     """Create tables and seed the admin user; attempt to patch older DBs."""
@@ -277,8 +275,12 @@ def init_db():
             with db.engine.begin() as conn:
                 conn.execute(text('ALTER TABLE "user" ADD COLUMN address VARCHAR(200)'))
 
-    # Seed admin
-    if not User.query.filter_by(email=ADMIN_EMAIL).first():
+    # Seed admin if credentials are provided
+    if (
+        ADMIN_EMAIL
+        and ADMIN_PASSWORD
+        and not User.query.filter_by(email=ADMIN_EMAIL).first()
+    ):
         admin = User(
             email=ADMIN_EMAIL,
             password_hash=generate_password_hash(ADMIN_PASSWORD),

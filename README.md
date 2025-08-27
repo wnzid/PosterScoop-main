@@ -2,6 +2,8 @@
 
 PosterScoop is a full-stack platform for browsing and ordering poster designs. The backend exposes a REST API built with Flask and SQLAlchemy, while the frontend is a React application styled with Material UI.
 
+You can try the live site at [https://posterscoop.studio](https://posterscoop.studio/).
+
 ## Project Structure
 
 - `backend/` – Flask API, database models, and uploaded assets.
@@ -19,7 +21,6 @@ PosterScoop is a full-stack platform for browsing and ordering poster designs. T
 3. `pip install -r requirements.txt`
 4. Configure environment variables as needed:
    - `DATABASE_URL` – database connection string (defaults to a local SQLite file).
-   - `ADMIN_EMAIL` and `ADMIN_PASSWORD` – credentials for the initial administrator account.
 5. `python app.py`
 
 The API will start on port 5004 by default.
