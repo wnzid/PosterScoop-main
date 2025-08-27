@@ -41,3 +41,5 @@ Use `npm run react` to run only the React client on port 3004.
 ## License
 
 No license file is provided. All rights reserved.
+
+@wnzid
